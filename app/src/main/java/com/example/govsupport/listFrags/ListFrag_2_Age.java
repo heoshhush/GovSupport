@@ -38,24 +38,31 @@ public class ListFrag_2_Age extends Fragment {
                 switch(checkedId){
                     case R.id.btn_list_age1 :
                         instance.setJA0103("Y");
+                        instance.addItem("JA0103");
                         break;
                     case R.id.btn_list_age2 :
                         instance.setJA0104("Y");
+                        instance.addItem("JA0104");
                         break;
                     case R.id.btn_list_age3 :
                         instance.setJA0105("Y");
+                        instance.addItem("JA0105");
                         break;
                     case R.id.btn_list_age4 :
                         instance.setJA0106("Y");
+                        instance.addItem("JA0106");
                         break;
                     case R.id.btn_list_age5 :
                         instance.setJA0107("Y");
+                        instance.addItem("JA0107");
                         break;
                     case R.id.btn_list_age6 :
                         instance.setJA0108("Y");
+                        instance.addItem("JA0108");
                         break;
                     case R.id.btn_list_age7 :
                         instance.setJA0109("Y");
+                        instance.addItem("JA0109");
                         break;
                 }
 

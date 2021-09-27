@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".listFrags.ListFrag_5_Etc2"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_listFrag5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="해당되는 부분에 체크해주세요!"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_listFrag5_partOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="학업 현황"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_5_partOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_1"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="초중고학생" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_2"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="대학/대학원생" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag5_partTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="가구 특성"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_5_partTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_3"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="다문화가족" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_4"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="북한이탈주민" />
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_5"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="한부모가정/조손가정" />
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_6"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="1인가구" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag5_partThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="건강 상태"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_5_partThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_7"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="질병/부상/질환자" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_8"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="중증/난치/희귀질환자" />
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_9"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="요양/치매환자" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag5_partFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="근로 여부"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_5_partFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_10"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="근로자/직장인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_2_11"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="구직자/실업자" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag5_partFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="다자녀가구 여부"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/btn_list_etc_2_12"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:text="다자녀가구" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btn_next_list_frag5"
+        android:text="다음으로"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:layout_marginBottom="50dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

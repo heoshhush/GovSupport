@@ -36,12 +36,36 @@ public class ListFrag_3_Income extends Fragment {
         btn_next_list_frag3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int checkedId = radioGroup_list_frag_3.getCheckedRadioButtonId();
+                switch(checkedId){
+                    case R.id.btn_list_income1 :
+                        NowUserCondition.getInstance().setJA0201("Y");
+                        NowUserCondition.getInstance().addItem("JA0201");
+                        break;
+                    case R.id.btn_list_income2 :
+                        NowUserCondition.getInstance().setJA0202("Y");
+                        NowUserCondition.getInstance().addItem("JA0202");
+                        break;
+                    case R.id.btn_list_income3 :
+                        NowUserCondition.getInstance().setJA0203("Y");
+                        NowUserCondition.getInstance().addItem("JA0203");
+                        break;
+                    case R.id.btn_list_income4 :
+                        NowUserCondition.getInstance().setJA0204("Y");
+                        NowUserCondition.getInstance().addItem("JA0204");
+                        break;
+                    case R.id.btn_list_income5 :
+                        NowUserCondition.getInstance().setJA0205("Y");
+                        NowUserCondition.getInstance().addItem("JA0205");
+                        break;
+                }
+
                 int current = viewPager2_list.getCurrentItem();
                 viewPager2_list.setCurrentItem(current+1);
-                NowUserCondition instance = NowUserCondition.getInstance();
-                Log.d("HOHO", instance.getJA0101() + ", " + instance.getJA0103());
 
-                // ListFrag의 SupportConditions를 가져와야한다.
+                // 이전에 한 것 : 1. getActivity().findViewById()로 부모 프래그먼트의 View 가져온 것. 2. 싱글톤 패턴 만들어서 공유 데이터 만든 것.
+                // 이제 해야할 것 " ListFrag의 SupportConditions를 가져와야한다. 즉, Volley로 가져온 데이터를 여기서 다뤄야한다.
+
             }
         });
 

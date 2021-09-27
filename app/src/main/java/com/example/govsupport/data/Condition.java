@@ -434,5 +434,151 @@ public class Condition {
         this.SVC_ID = SVC_ID;
     }
 
-
+    public String getIdx(String item){
+        String result = " ";
+        switch(item){
+            case "JA0101":
+                result = getJA0101();
+                break;
+            case "JA0102":
+                result = getJA0102();
+                break;
+            case "JA0103":
+                result = getJA0103();
+                break;
+            case "JA0104":
+                result = getJA0104();
+                break;
+            case "JA0105":
+                result = getJA0105();
+                break;
+            case "JA0106":
+                result = getJA0106();
+                break;
+            case "JA0107":
+                result = getJA0107();
+                break;
+            case "JA0108":
+                result = getJA0108();
+                break;
+            case "JA0109":
+                result = getJA0109();
+                break;
+            case "JA0201":
+                result = getJA0201();
+                break;
+            case "JA0202":
+                result = getJA0202();
+                break;
+            case "JA0203":
+                result = getJA0203();
+                break;
+            case "JA0204":
+                result = getJA0204();
+                break;
+            case "JA0205":
+                result = getJA0205();
+                break;
+            case "JA0301":
+                result = getJA0301();
+                break;
+            case "JA0302":
+                result = getJA0302();
+                break;
+            case "JA0303":
+                result = getJA0303();
+                break;
+            case "JA0304":
+                result = getJA0304();
+                break;
+            case "JA0305":
+                result = getJA0305();
+                break;
+            case "JA0306":
+                result = getJA0306();
+                break;
+            case "JA0307":
+                result = getJA0307();
+                break;
+            case "JA0308":
+                result = getJA0308();
+                break;
+            case "JA0309":
+                result = getJA0309();
+                break;
+            case "JA0310":
+                result = getJA0310();
+                break;
+            case "JA0311":
+                result = getJA0311();
+                break;
+            case "JA0312":
+                result = getJA0312();
+                break;
+            case "JA0313":
+                result = getJA0313();
+                break;
+            case "JA0314":
+                result = getJA0314();
+                break;
+            case "JA0315":
+                result = getJA0315();
+                break;
+            case "JA0316":
+                result = getJA0316();
+                break;
+            case "JA0317":
+                result = getJA0317();
+                break;
+            case "JA0318":
+                result = getJA0318();
+                break;
+            case "JA0319":
+                result = getJA0319();
+                break;
+            case "JA0320":
+                result = getJA0320();
+                break;
+            case "JA0321":
+                result = getJA0321();
+                break;
+            case "JA0322":
+                result = getJA0322();
+                break;
+            case "JA0401":
+                result = getJA0401();
+                break;
+            case "JA0402":
+                result = getJA0402();
+                break;
+            case "JA0403":
+                result = getJA0403();
+                break;
+            case "JA0404":
+                result = getJA0404();
+                break;
+            case "JA0405":
+                result = getJA0405();
+                break;
+            case "JA0406":
+                result = getJA0406();
+                break;
+            case "JA0407":
+                result = getJA0407();
+                break;
+            case "JA0408":
+                result = getJA0408();
+                break;
+            case "JA0409":
+                result = getJA0409();
+                break;
+            case "JA0410":
+                result = getJA0410();
+                break;
+            case "JA0411":
+                result = getJA0411();
+                break;
+        }
+        return result;
+    }
 }

@@ -45,8 +45,10 @@ public class ListFrag_1_Sex extends Fragment {
                 int checkedId = radioGroup_list_frag_1.getCheckedRadioButtonId();
                 if(checkedId == R.id.btn_male_list_frag1){
                     NowUserCondition.getInstance().setJA0101("Y");
+                    NowUserCondition.getInstance().addItem("JA0101");
                 } else {
                     NowUserCondition.getInstance().setJA0102("Y");
+                    NowUserCondition.getInstance().addItem("JA0102");
                 }
 
                 int current = viewPager2_list.getCurrentItem();

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
+    tools:context=".listFrags.ListFrag_4_Etc1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="150dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_listFrag4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="해당되는 부분에 체크해주세요!"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_listFrag4_partOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="출산"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_4_partOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_1"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="난임" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_2"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="임신부" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_3"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="출산후" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag4_partTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="장애 여부"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_4_partTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_4"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="심한 장애" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_5"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="심하지 않은 장애" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag4_partThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="군 경력"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_4_partThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_6"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="국가 유공자" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_7"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="제대군인" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_listFrag4_partFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="농업 및 어업 등 종사 여부"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_listFrag_4_partFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_8"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="경관농업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_9"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="경종농업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_10"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="과수농업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_11"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="원예 및 특용 농업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_12"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="농지 소유자" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_13"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="기타농업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_14"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="연근해/구획 어업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_15"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="양식업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_16"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="어선소유자" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_17"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="기타어업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_18"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="축산업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc_1_19"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="임업인" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_next_list_frag4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:elevation="10dp"
+        android:text="다음으로"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
