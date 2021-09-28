@@ -49,6 +49,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="대학/대학원생" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc2_partOne_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
             </RadioGroup>
 
             <TextView
@@ -87,6 +94,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="1인가구" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc2_partTwo_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
             </RadioGroup>
 
             <TextView
@@ -120,6 +134,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="요양/치매환자" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc2_partThree_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
             </RadioGroup>
 
             <TextView
@@ -149,6 +170,13 @@
                     android:layout_height="55dp"
                     android:text="구직자/실업자" />
 
+                <RadioButton
+                    android:id="@+id/btn_list_etc2_partFour_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
+
             </RadioGroup>
 
             <TextView
@@ -165,6 +193,12 @@
                 android:layout_width="200dp"
                 android:layout_height="55dp"
                 android:text="다자녀가구" />
+            <RadioButton
+                android:id="@+id/btn_list_etc2_partFive_null"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:text="해당없음"
+                android:checked="true"/>
         </LinearLayout>
     </ScrollView>
 

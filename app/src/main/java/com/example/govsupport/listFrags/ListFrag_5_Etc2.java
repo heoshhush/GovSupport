@@ -51,6 +51,11 @@ public class ListFrag_5_Etc2 extends Fragment {
                         NowUserCondition.getInstance().setJA0321("Y");
                         NowUserCondition.getInstance().addItem("JA0321");
                         break;
+                    case R.id.btn_list_etc2_partOne_null :
+                        NowUserCondition.getInstance().setJA0320("Y");
+                        NowUserCondition.getInstance().addItem("JA0321");
+                        NowUserCondition.getInstance().setJA0321("Y");
+                        NowUserCondition.getInstance().addItem("JA0321");
                 }
                 int partTwoChecked = radioGroup_listFrag_5_partTwo.getCheckedRadioButtonId();
                 switch (partTwoChecked){
@@ -70,6 +75,16 @@ public class ListFrag_5_Etc2 extends Fragment {
                         NowUserCondition.getInstance().setJA0404("Y");
                         NowUserCondition.getInstance().addItem("JA0404");
                         break;
+                    case R.id.btn_list_etc2_partTwo_null:
+                        NowUserCondition.getInstance().setJA0401("Y");
+                        NowUserCondition.getInstance().addItem("JA0401");
+                        NowUserCondition.getInstance().setJA0402("Y");
+                        NowUserCondition.getInstance().addItem("JA0402");
+                        NowUserCondition.getInstance().setJA0403("Y");
+                        NowUserCondition.getInstance().addItem("JA0403");
+                        NowUserCondition.getInstance().setJA0404("Y");
+                        NowUserCondition.getInstance().addItem("JA0404");
+                        break;
                 }
                 int partThreeChecked = radioGroup_listFrag_5_partThree.getCheckedRadioButtonId();
                 switch (partThreeChecked){
@@ -85,6 +100,14 @@ public class ListFrag_5_Etc2 extends Fragment {
                         NowUserCondition.getInstance().setJA0407("Y");
                         NowUserCondition.getInstance().addItem("JA0407");
                         break;
+                    case R.id.btn_list_etc2_partThree_null :
+                        NowUserCondition.getInstance().setJA0405("Y");
+                        NowUserCondition.getInstance().addItem("JA0405");
+                        NowUserCondition.getInstance().setJA0406("Y");
+                        NowUserCondition.getInstance().addItem("JA0406");
+                        NowUserCondition.getInstance().setJA0407("Y");
+                        NowUserCondition.getInstance().addItem("JA0407");
+                        break;
                 }
                 int partFourChecked = radioGroup_listFrag_5_partFour.getCheckedRadioButtonId();
                 switch(partFourChecked){
@@ -93,6 +116,12 @@ public class ListFrag_5_Etc2 extends Fragment {
                         NowUserCondition.getInstance().addItem("JA0408");
                         break;
                     case R.id.btn_list_etc_2_11: //구직자/실업자
+                        NowUserCondition.getInstance().setJA0409("Y");
+                        NowUserCondition.getInstance().addItem("JA0409");
+                        break;
+                    case R.id.btn_list_etc2_partFour_null:
+                        NowUserCondition.getInstance().setJA0408("Y");
+                        NowUserCondition.getInstance().addItem("JA0408");
                         NowUserCondition.getInstance().setJA0409("Y");
                         NowUserCondition.getInstance().addItem("JA0409");
                         break;

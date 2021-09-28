@@ -55,6 +55,14 @@ public class ListFrag_4_Etc1 extends Fragment {
                         NowUserCondition.getInstance().setJA0303("Y");
                         NowUserCondition.getInstance().addItem("JA0303");
                         break;
+                    case R.id.btn_list_etc1_partOne_null :
+                        NowUserCondition.getInstance().setJA0301("Y");
+                        NowUserCondition.getInstance().addItem("JA0301");
+                        NowUserCondition.getInstance().setJA0302("Y");
+                        NowUserCondition.getInstance().addItem("JA0302");
+                        NowUserCondition.getInstance().setJA0303("Y");
+                        NowUserCondition.getInstance().addItem("JA0303");
+                        break;
                 }
 
                 int partTwoChecked = radioGroup_listFrag_4_partTwo.getCheckedRadioButtonId();
@@ -67,6 +75,12 @@ public class ListFrag_4_Etc1 extends Fragment {
                         NowUserCondition.getInstance().setJA0305("Y");
                         NowUserCondition.getInstance().addItem("JA0305");
                         break;
+                    case R.id.btn_list_etc1_partTwo_null:
+                        NowUserCondition.getInstance().setJA0304("Y");
+                        NowUserCondition.getInstance().addItem("JA0304");
+                        NowUserCondition.getInstance().setJA0305("Y");
+                        NowUserCondition.getInstance().addItem("JA0305");
+                        break;
                 }
 
                 int partThreeChecked = radioGroup_listFrag_4_partThree.getCheckedRadioButtonId();
@@ -76,6 +90,12 @@ public class ListFrag_4_Etc1 extends Fragment {
                         NowUserCondition.getInstance().addItem("JA0306");
                         break;
                     case R.id.btn_list_etc_1_7 : // 제대군인
+                        NowUserCondition.getInstance().setJA0307("Y");
+                        NowUserCondition.getInstance().addItem("JA0307");
+                        break;
+                    case R.id.btn_list_etc1_partThree_null :
+                        NowUserCondition.getInstance().setJA0306("Y");
+                        NowUserCondition.getInstance().addItem("JA0306");
                         NowUserCondition.getInstance().setJA0307("Y");
                         NowUserCondition.getInstance().addItem("JA0307");
                         break;
@@ -128,6 +148,32 @@ public class ListFrag_4_Etc1 extends Fragment {
                         NowUserCondition.getInstance().addItem("JA0318");
                         break;
                     case R.id.btn_list_etc_1_19 : //임업인
+                        NowUserCondition.getInstance().setJA0319("Y");
+                        NowUserCondition.getInstance().addItem("JA0319");
+                        break;
+                    case R.id.btn_list_etc1_partFour_null :
+                        NowUserCondition.getInstance().setJA0308("Y");
+                        NowUserCondition.getInstance().addItem("JA0308");
+                        NowUserCondition.getInstance().setJA0309("Y");
+                        NowUserCondition.getInstance().addItem("JA0309");
+                        NowUserCondition.getInstance().setJA0310("Y");
+                        NowUserCondition.getInstance().addItem("JA0310");
+                        NowUserCondition.getInstance().setJA0311("Y");
+                        NowUserCondition.getInstance().addItem("JA0311");
+                        NowUserCondition.getInstance().setJA0312("Y");
+                        NowUserCondition.getInstance().addItem("JA0312");
+                        NowUserCondition.getInstance().setJA0313("Y");
+                        NowUserCondition.getInstance().addItem("JA0313");
+                        NowUserCondition.getInstance().setJA0314("Y");
+                        NowUserCondition.getInstance().addItem("JA0314");
+                        NowUserCondition.getInstance().setJA0315("Y");
+                        NowUserCondition.getInstance().addItem("JA0315");
+                        NowUserCondition.getInstance().setJA0316("Y");
+                        NowUserCondition.getInstance().addItem("JA0316");
+                        NowUserCondition.getInstance().setJA0317("Y");
+                        NowUserCondition.getInstance().addItem("JA0317");
+                        NowUserCondition.getInstance().setJA0318("Y");
+                        NowUserCondition.getInstance().addItem("JA0318");
                         NowUserCondition.getInstance().setJA0319("Y");
                         NowUserCondition.getInstance().addItem("JA0319");
                         break;

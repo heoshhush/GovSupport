@@ -58,6 +58,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="출산후" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc1_partOne_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
             </RadioGroup>
 
             <TextView
@@ -86,6 +93,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="심하지 않은 장애" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc1_partTwo_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:checked="true"
+                    android:text="해당없음" />
             </RadioGroup>
 
             <TextView
@@ -114,6 +128,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="제대군인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc1_partThree_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
             </RadioGroup>
 
             <TextView
@@ -202,6 +223,13 @@
                     android:layout_width="200dp"
                     android:layout_height="55dp"
                     android:text="임업인" />
+
+                <RadioButton
+                    android:id="@+id/btn_list_etc1_partFour_null"
+                    android:layout_width="200dp"
+                    android:layout_height="55dp"
+                    android:text="해당없음"
+                    android:checked="true"/>
             </RadioGroup>
 
         </LinearLayout>
