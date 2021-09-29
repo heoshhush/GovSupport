@@ -20,12 +20,10 @@ public class ListFrag_6_serviceListAdapter extends RecyclerView.Adapter<ListFrag
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv_title;
-        TextView tv_target;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_title = itemView.findViewById(R.id.tv_title);
-            tv_target = itemView.findViewById(R.id.tv_target);
         }
 
     }
@@ -44,7 +42,6 @@ public class ListFrag_6_serviceListAdapter extends RecyclerView.Adapter<ListFrag
     public void onBindViewHolder(@NonNull ListFrag_6_serviceListAdapter.ViewHolder holder, int position) {
         ServiceItem item = items.get(position);
         holder.tv_title.setText(item.서비스명);
-        holder.tv_target.setText(item.지원대상);
     }
 
     @Override

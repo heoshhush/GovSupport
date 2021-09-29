@@ -25,7 +25,6 @@ public class ListFrag_6_detailsAdapter extends RecyclerView.Adapter<ListFrag_6_d
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_title = itemView.findViewById(R.id.tv_title);
-            tv_target = itemView.findViewById(R.id.tv_target);
         }
 
     }
