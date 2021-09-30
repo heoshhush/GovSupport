@@ -6,10 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +34,11 @@ import com.example.govsupport.data.ServiceList;
 import com.example.govsupport.data.SupportConditions;
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,11 +53,13 @@ public class ListFrag_6_Result extends Fragment {
 
     RecyclerView recyclerView_list_frag6;
 
-    String detailUrl = "https://api.odcloud.kr/api/gov24/v1/serviceDetail?page=1&perPage=50&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
-    String serviceUrl = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=1&perPage=1200&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
 
+    String serviceUrl = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=1&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+    String serviceUrl2 = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=2&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+    String serviceUrl3 =   "https://api.odcloud.kr/api/gov24/v1/serviceList?page=3&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+    String serviceUrl4 = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=4&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
 
-//    DetailList detailList;
+    //    DetailList detailList;
 //    ArrayList<Detail> detailItems;
 //    ListFrag_6_detailsAdapter listFrag_6_detailsAdapter;
 
@@ -70,9 +79,9 @@ public class ListFrag_6_Result extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
+        Log.d("Result", "frag6 호출");
 
-
-        StringRequest serviceRequest = new StringRequest(Request.Method.GET, serviceUrl, new Response.Listener<String>() {
+        StringRequest serviceRequest = new StringRequest(Request.Method.GET, serviceUrl4, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("Result", "frag6의 serviceRequest의 onResponse() 호출");
@@ -81,9 +90,6 @@ public class ListFrag_6_Result extends Fragment {
                 serviceList = gson.fromJson(response, ServiceList.class);
                 serviceItems = serviceList.data;
 
-                // 0928 - searchResults가 nullPointer Error 발생! volley의 동기화문제인듯.
-                // 0928-2 - searchResults에 아무것도 안들어감!!! 첫 request의 getSerachResult는 잘 작동하는데 불구하고.
-                // 첫 request - searchResults 변경 - 두번째 request - datalist 변경;
 
                 ArrayList<String> searchResults_Condition = SearchConditionResults.getInstance().getSearchResult();
                 for(ServiceItem item: serviceItems){
@@ -92,16 +98,33 @@ public class ListFrag_6_Result extends Fragment {
                     }
                 }
                 Collections.sort(searchResults_serviceItem, new ServiceItemComparator());
-
+                Log.d("Result", SearchConditionResults.getInstance().getSearchResult().toString());
+                Log.d("Result", searchResults_serviceItem.toString());
                 listFrag_6_serviceListAdapter = new ListFrag_6_serviceListAdapter();
                 listFrag_6_serviceListAdapter.setItems(searchResults_serviceItem);
                 listFrag_6_serviceListAdapter.notifyDataSetChanged();
+
+                listFrag_6_serviceListAdapter.setOnItemClickListener(new ListFrag_6_serviceListAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View v, int pos) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("SVC_ID", searchResults_serviceItem.get(pos).서비스ID);
+                        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                        ft.addToBackStack(null);
+                        ListFrag_7_DetailResult listFrag_7_detailResult = new ListFrag_7_DetailResult();
+                        listFrag_7_detailResult.setArguments(bundle);
+                        ft.add(R.id.fragment_list, listFrag_7_detailResult);
+                        ft.commit();
+                    }
+                });
+
+
                 recyclerView_list_frag6.setAdapter(listFrag_6_serviceListAdapter);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d(TAG, "error");
+                Log.d("Result", "error");
             }
         }) {
             @Nullable
@@ -113,6 +136,7 @@ public class ListFrag_6_Result extends Fragment {
         };
 
         serviceRequest.setShouldCache(false);
+        AppHelper.requestQueue = Volley.newRequestQueue(getContext());
         AppHelper.requestQueue.add(serviceRequest);
         super.onCreate(savedInstanceState);
     }
@@ -121,6 +145,8 @@ public class ListFrag_6_Result extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_list_frag_6__result, container, false);
+
+
 
         recyclerView_list_frag6 = rootView.findViewById(R.id.recyclerView_list_frag6);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

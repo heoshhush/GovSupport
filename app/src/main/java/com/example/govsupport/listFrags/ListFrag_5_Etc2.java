@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -190,7 +191,9 @@ public class ListFrag_5_Etc2 extends Fragment {
 
 
                 getSearchResult(items);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_list, listFrag_6_result).commit();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.addToBackStack(null);
+                ft.add(R.id.fragment_list, listFrag_6_result).commit();
             }
         });
 

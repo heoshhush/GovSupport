@@ -18,12 +18,36 @@ import java.util.ArrayList;
 public class ListFrag_6_serviceListAdapter extends RecyclerView.Adapter<ListFrag_6_serviceListAdapter.ViewHolder> {
     ArrayList<ServiceItem> items = new ArrayList<>();
 
+    public interface OnItemClickListener{
+        void onItemClick(View v, int pos);
+    }
+
+    OnItemClickListener mListener = null;
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.mListener = listener;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv_title;
+        TextView tv_date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if( pos != RecyclerView.NO_POSITION){
+                        mListener.onItemClick(v, pos);
+                    }
+
+                }
+            });
+
             tv_title = itemView.findViewById(R.id.tv_title);
+            tv_date = itemView.findViewById(R.id.tv_date);
         }
 
     }
@@ -42,6 +66,7 @@ public class ListFrag_6_serviceListAdapter extends RecyclerView.Adapter<ListFrag
     public void onBindViewHolder(@NonNull ListFrag_6_serviceListAdapter.ViewHolder holder, int position) {
         ServiceItem item = items.get(position);
         holder.tv_title.setText(item.서비스명);
+        holder.tv_date.setText(item.신청기한);
     }
 
     @Override
