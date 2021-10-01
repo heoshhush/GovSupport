@@ -53,8 +53,10 @@ public class ListFrag_6_Result extends Fragment {
 
     RecyclerView recyclerView_list_frag6;
 
+    boolean isLoading = false;
+    int LOAD_IDX;
 
-    String serviceUrl = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=1&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+    String serviceUrl1 = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=1&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
     String serviceUrl2 = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=2&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
     String serviceUrl3 =   "https://api.odcloud.kr/api/gov24/v1/serviceList?page=3&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
     String serviceUrl4 = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=4&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
@@ -92,17 +94,18 @@ public class ListFrag_6_Result extends Fragment {
 
 
                 ArrayList<String> searchResults_Condition = SearchConditionResults.getInstance().getSearchResult();
+                Log.d("Result", "조건에 맞는 검색 결과 : " + searchResults_Condition.size() + ", " + searchResults_Condition.toString());
                 for(ServiceItem item: serviceItems){
                     if(searchResults_Condition.contains(item.서비스ID)){
                         searchResults_serviceItem.add(item);
                     }
                 }
                 Collections.sort(searchResults_serviceItem, new ServiceItemComparator());
-                Log.d("Result", SearchConditionResults.getInstance().getSearchResult().toString());
-                Log.d("Result", searchResults_serviceItem.toString());
                 listFrag_6_serviceListAdapter = new ListFrag_6_serviceListAdapter();
                 listFrag_6_serviceListAdapter.setItems(searchResults_serviceItem);
                 listFrag_6_serviceListAdapter.notifyDataSetChanged();
+
+                LOAD_IDX = 1;
 
                 listFrag_6_serviceListAdapter.setOnItemClickListener(new ListFrag_6_serviceListAdapter.OnItemClickListener() {
                     @Override
@@ -151,8 +154,82 @@ public class ListFrag_6_Result extends Fragment {
         recyclerView_list_frag6 = rootView.findViewById(R.id.recyclerView_list_frag6);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView_list_frag6.setLayoutManager(layoutManager);
+        Log.d("Result", "Position :" + layoutManager.findLastCompletelyVisibleItemPosition());
+        recyclerView_list_frag6.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                //data = searchResults_serviceItem
+                if(!isLoading){
+                    if(layoutManager != null && layoutManager.findLastCompletelyVisibleItemPosition() <= searchResults_serviceItem.size() - 1){
+                        loadMoreItem();
+                        isLoading = true;
+                        //해야할일 1. adapter에서 loading 화면 만들기.
+                        //해야할일 2. 첫 결과가 아무것도 없을때는 어떻게하나?
+                        //해야할일 3. adapter에 뜨는 카드 수랑, searchResults_Condition.size()랑 다름...
+                    }
+                }
+                super.onScrolled(recyclerView, dx, dy);
+            }
+        });
+
+        if(layoutManager.findLastCompletelyVisibleItemPosition() == -1){
+            for(int i = LOAD_IDX; i < 5; i++){
+                loadMoreItem();
+            }
+        }
 
         return rootView;
+    }
+
+    public void loadMoreItem(){
+//        searchResults_serviceItem.add(null);
+//        listFrag_6_serviceListAdapter.notifyDataSetChanged(); // 혹은, 불러올 사이즈를 알면 notifyItemInserted(items.size()-1); 할 수 있다.
+
+        String url = "";
+        switch(LOAD_IDX){
+            case 1:
+                url = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=1&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+                break;
+            case 2:
+                url = "https://api.odcloud.kr/api/gov24/v1/serviceList?page=2&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+                break;
+            case 3:
+                url =   "https://api.odcloud.kr/api/gov24/v1/serviceList?page=3&perPage=300&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
+                break;
+        }
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Gson gson = new Gson();
+                serviceList = gson.fromJson(response, ServiceList.class);
+                serviceItems = serviceList.data;
+                ArrayList<String> searchResults_Condition = SearchConditionResults.getInstance().getSearchResult();
+                for(ServiceItem item : serviceItems){
+                    if(searchResults_Condition.contains(item.서비스ID)){
+                        searchResults_serviceItem.add(item);
+                        Log.d("Result", LOAD_IDX + " loadMoreItem : " + item.서비스명);
+                    }
+                }
+                listFrag_6_serviceListAdapter.notifyDataSetChanged();
+                LOAD_IDX++;
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Result", "error from scroll load");
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                return params;
+            }
+        };
+
+        request.setShouldCache(false);
+        AppHelper.requestQueue.add(request);
     }
 
 

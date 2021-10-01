@@ -49,10 +49,28 @@ public class ListFrag_7_DetailResult extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        getCardInfo();
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_list_frag_7__detail, container, false);
+        tv_listFrag7_1 = rootView.findViewById(R.id.tv_listFrag7_1);
+        tv_listFrag7_2 = rootView.findViewById(R.id.tv_listFrag7_2);
+        tv_listFrag7_3 = rootView.findViewById(R.id.tv_listFrag7_3);
+        tv_listFrag7_4 = rootView.findViewById(R.id.tv_listFrag7_4);
+        tv_listFrag7_5 = rootView.findViewById(R.id.tv_listFrag7_5);
+
+        return rootView;
+    }
+
+    public void getCardInfo(){
         Log.d("Result",SVC_ID);
         String detailUrl = "https://api.odcloud.kr/api/gov24/v1/serviceDetail?page=1&perPage=1&cond%5BSVC_ID%3A%3AEQ%5D=" + SVC_ID + "&serviceKey=yZJhcwbc4u6qNYRnb9G809Y%2B3GgjLV36H5bRO35YO6qD%2F3ZEZKCHna9WqLqQiVh2IAXRx8HXuBlzZrZs%2BLDcpg%3D%3D";
-
-        StringRequest detailRequest = new StringRequest(Request.Method.GET, "detailUrl", new Response.Listener<String>() {
+        Log.d("Result", detailUrl);
+        StringRequest detailRequest = new StringRequest(Request.Method.GET, detailUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Gson gson = new Gson();
@@ -85,18 +103,5 @@ public class ListFrag_7_DetailResult extends Fragment {
 
         detailRequest.setShouldCache(false);
         AppHelper.requestQueue.add(detailRequest);
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_list_frag_7__detail, container, false);
-        tv_listFrag7_1 = rootView.findViewById(R.id.tv_listFrag7_1);
-        tv_listFrag7_2 = rootView.findViewById(R.id.tv_listFrag7_2);
-        tv_listFrag7_3 = rootView.findViewById(R.id.tv_listFrag7_3);
-        tv_listFrag7_4 = rootView.findViewById(R.id.tv_listFrag7_4);
-        tv_listFrag7_5 = rootView.findViewById(R.id.tv_listFrag7_5);
-        return rootView;
     }
 }
